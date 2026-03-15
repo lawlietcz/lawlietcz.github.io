@@ -1,201 +1,289 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Student Project Showcase</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="A simple, clean showcase of student projects across Year 9 Game Designs and Student Websites." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Developer Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 72px 0 40px;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 30%),
+                  radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.12), transparent 28%),
+                  var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 8px 0 40px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #bae6fd;
+      border: 1px solid rgba(56, 189, 248, 0.18);
+    }
+
+    footer {
+      padding: 10px 0 48px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 28px 22px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Student Project Showcase</h1>
-      <p class="tagline">
-        A curated collection of projects created by our students. Explore playable game prototypes from Year 9 and browse polished websites built in our web design classes.
-      </p>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Year 9 Game Designs -->
-    <section aria-labelledby="games-heading">
-      <div class="section-header">
-        <h2 id="games-heading">Year 9 Game Designs</h2>
-        <p class="section-subtitle">Links open the students’ Game Lab projects.</p>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <div class="eyebrow">Indie Developer Portfolio</div>
+        <h1>Unity Developer & Simulation Game Creator</h1>
+        <p class="intro">
+          I am an indie developer focused on building simulation, strategy, and educational game experiences.
+          My work combines gameplay systems, UI design, and interactive mechanics, with published titles across
+          Steam and mobile platforms. I enjoy creating projects that turn complex ideas into engaging, playable systems.
+        </p>
+        <div class="quick-links">
+          <a class="button" href="#portfolio">View Portfolio</a>
+          <a class="button" href="https://store.steampowered.com/app/1815440/Chinese_Driving_Test_Simulator/" target="_blank" rel="noopener noreferrer">Featured Steam Game</a>
+        </div>
       </div>
+    </header>
 
+    <section id="portfolio">
+      <h2>Selected Work</h2>
       <div class="grid">
-        <!-- Replace href and titles with real projects -->
-        <a class="card" href="https://studio.code.org/projects/gamelab/G98t29zV5H0mwGCGOA3qpJS-WFvHQnq0wBEWy08qbo4" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">UFO</h3>
-            <p class="card-meta">Student: Ai. M</p>
-            <p class="card-desc">This is a collect-and-avoid arcade game where the player moves left and right to catch falling green orbs for points while avoiding red orbs that reduce points and temporarily change the player’s color.</p>
+        <article class="card">
+          <div>
+            <h3>Chinese Driving Test Simulator</h3>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">Simulation</span>
+              <span class="tag">Steam</span>
+            </div>
+            <p>A driving simulation project focused on recreating structured test scenarios, vehicle handling, and player feedback systems.</p>
           </div>
-        </a>
+          <a href="https://store.steampowered.com/app/1815440/Chinese_Driving_Test_Simulator/" target="_blank" rel="noopener noreferrer">Open project ↗</a>
+        </article>
 
-        <a class="card" href="https://studio.code.org/projects/gamelab/cNVprODssDsC6FOpLI_cAEoii9npZCwS7s59F7dwTn0" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Turbo Tap Race</h3>
-            <p class="card-meta">Student: Al. F</p>
-            <p class="card-desc">Rapidly press Q and E to speed your racer to the finish line before the AI opponents beat you there!</p>
+        <article class="card">
+          <div>
+            <h3>Chinese Rail Sim</h3>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">Strategy</span>
+              <span class="tag">Steam</span>
+            </div>
+            <p>A rail network strategy and simulation game where players design routes, place stations, and optimize transport demand across a larger map.</p>
           </div>
-        </a>
+          <a href="https://store.steampowered.com/app/2261070/Chinese_Rail_SIm/" target="_blank" rel="noopener noreferrer">Open project ↗</a>
+        </article>
 
-        <a class="card" href="https://studio.code.org/projects/gamelab/ikvMIxxfJIaRhO7Yel09cs5lK68qia8IaMN-HXycB4g" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Alien Catcher</h3>
-            <p class="card-meta">Student: Ar. M</p>
-            <p class="card-desc">Move your player with the arrow keys and zap all the bouncing aliens with the spacebar to catch them and win!</p>
+        <article class="card">
+          <div>
+            <h3>Tota Life: Parent-Kid Suite</h3>
+            <div class="tags">
+              <span class="tag">Mobile</span>
+              <span class="tag">Educational</span>
+              <span class="tag">iOS</span>
+            </div>
+            <p>An open-ended mobile app designed around interactive family play, scene exploration, and child-friendly touch interactions.</p>
           </div>
-        </a>
+          <a href="https://apps.apple.com/au/app/tota-life-parent-kid-suite/id1629421171" target="_blank" rel="noopener noreferrer">Open project ↗</a>
+        </article>
 
-        <a class="card" href="https://studio.code.org/projects/gamelab/jVVq9HLVyDOKtlQbIzY2-n3gHQWdNb_OdNSwx5d5_YY" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Flappy Alien</h3>
-            <p class="card-meta">Student: De. D</p>
-            <p class="card-desc">Click to flap your alien through shifting pipe gaps, fighting gravity to score points and avoid crashing.</p>
+        <article class="card">
+          <div>
+            <h3>Time Freeze</h3>
+            <div class="tags">
+              <span class="tag">Steam</span>
+              <span class="tag">Indie</span>
+              <span class="tag">Gameplay Prototype</span>
+            </div>
+            <p>A published Steam title exploring action-focused gameplay concepts and mechanic-driven player progression.</p>
           </div>
-        </a>
+          <a href="https://store.steampowered.com/app/1457500/Time_Freeze/" target="_blank" rel="noopener noreferrer">Open project ↗</a>
+        </article>
 
-        <a class="card" href="https://studio.code.org/projects/gamelab/vvNFLElyOmIYpnRKdtFXH4e89iYa4Cbc0_XP1_ZdHTA" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Monkey Dodge: Rabbit Run</h3>
-            <p class="card-meta">Student: Jo. C</p>
-            <p class="card-desc">Use the arrow keys to guide the rabbit across the screen while dodging fast-moving monkeys—reach the top to win, but each hit costs a life!</p>
+        <article class="card">
+          <div>
+            <h3>I wanna Reach the TOP</h3>
+            <div class="tags">
+              <span class="tag">Steam</span>
+              <span class="tag">Challenge</span>
+              <span class="tag">Platforming</span>
+            </div>
+            <p>A challenge-oriented game built around progression, precision, and repeatable mastery-driven play.</p>
           </div>
-        </a>
-
-        <a class="card" href="https://studio.code.org/projects/gamelab/TYV_QsyP8w2kWFY8Cwg3Hh5W6AFM3xUXCrgh1ZEvroU" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Donut Clicker</h3>
-            <p class="card-meta">Student: Se. T</p>
-            <p class="card-desc">Click anywhere to collect donuts and watch your score soar past 1000 for a sweet congratulatory message!</p>
-          </div>
-        </a>
-
-        <a class="card" href="https://studio.code.org/projects/gamelab/h_uivvGgg4LEl89_jrPq2q135LJVVaOFJhXQEY8USsk" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Basket Blitz</h3>
-            <p class="card-meta">Student: Si. S</p>
-            <p class="card-desc">Use the arrow keys to catch falling fruit in your basket while a swooping bird interferes—score points, avoid 20 misses, and click to reset.</p>
-          </div>
-        </a>
-
-        <a class="card" href="https://studio.code.org/projects/gamelab/YFKP9TirEymOXs90wJCmL8x-c9DEWYqKGsGe65wjO7I" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Slider Clicker</h3>
-            <p class="card-meta">Student: Vr. C</p>
-            <p class="card-desc">Click the mouse to earn slider points on a pink background and watch your score climb higher with every click!</p>
-          </div>
-        </a>
-
-        <a class="card" href="https://studio.code.org/projects/gamelab/f_EOh7jlmegBeKJUAcCZ2Td-7F8C26gI6MJg96J7iBY" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Goldie’s Shrimp Dash</h3>
-            <p class="card-meta">Student: Ye. R</p>
-            <p class="card-desc">Swim as Goldie to snatch shrimp for points while gravity tugs you around—bounce off edges and avoid the crab and jellyfish or it’s game over!</p>
-          </div>
-        </a>
-
-        <a class="card" href="https://studio.code.org/projects/gamelab/2Qwr2LMCrAS0W96bjG2TB697pQPeCGucp84MUHlju08" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Mini Minesweeper</h3>
-            <p class="card-meta">Student: Za. S</p>
-            <p class="card-desc">Left-click to uncover safe cells and flood-reveal empty areas, right-click to flag all 9 hidden mines—hit a mine and it’s game over!</p>
-          </div>
-        </a>
-
-        <a class="card" href="https://studio.code.org/projects/gamelab/KGavzuP2vlWJFVfckuZFhYMMQunm3zlQJFSa1JnXnIg" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Starfall Platformer</h3>
-            <p class="card-meta">Student: Iz. A</p>
-            <p class="card-desc">Ride moving platforms, jump and steer to catch falling goodies for points while dodging a harmful sprite that slashes your score.</p>
-          </div>
-        </a>
-        
-        <a class="card" href="https://studio.code.org/projects/gamelab/KGavzuP2vlWJFVfckuZFhWDlnx0UmiZBNNmgx8Cbnmo" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">UFO Drop Dodge</h3>
-            <p class="card-meta">Student: Ka. S</p>
-            <p class="card-desc">Fly your ship with the arrow keys and dodge the falling UFO—each time it slips past you scores a point, but one hit ends the run.</p>
-          </div>
-        </a>
-
-        <a class="card" href="Replace" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Game Title Here</h3>
-            <p class="card-meta">Student: </p>
-            <p class="card-desc"></p>
-          </div>
-        </a>
+          <a href="https://store.steampowered.com/app/1937460/I_wanna_Reach_the_TOP/" target="_blank" rel="noopener noreferrer">Open project ↗</a>
+        </article>
       </div>
     </section>
 
-    <!-- Student Websites -->
-    <section aria-labelledby="websites-heading">
-      <div class="section-header">
-        <h2 id="websites-heading">Student Websites</h2>
-        <p class="section-subtitle">Links open the students’ sites in new tabs.</p>
-      </div>
-
+    <section>
+      <h2>Focus Areas</h2>
       <div class="grid">
-        <!-- Replace href and titles with real websites -->
-        <a class="card" href="https://example.com/site-01" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Portfolio Site 01</h3>
-            <p class="card-meta">Student: Mia C.</p>
-            <p class="card-desc">Personal portfolio with project galleries and contact form.</p>
+        <article class="card">
+          <div>
+            <h3>Gameplay Systems</h3>
+            <p>Designing and implementing interactive mechanics, progression loops, and player feedback systems inside Unity.</p>
           </div>
-        </a>
-
-        <a class="card" href="https://example.com/site-02" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Restaurant Landing 02</h3>
-            <p class="card-meta">Student: Ben T.</p>
-            <p class="card-desc">Responsive landing page with a menu section and booking CTA.</p>
+        </article>
+        <article class="card">
+          <div>
+            <h3>Simulation & Strategy</h3>
+            <p>Building systems that model demand, control, rules, and trade-offs in ways that stay readable and fun for players.</p>
           </div>
-        </a>
-
-        <a class="card" href="https://example.com/site-03" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Tech Blog 03</h3>
-            <p class="card-meta">Student: Sara D.</p>
-            <p class="card-desc">Blog layout with tags, featured posts, and archive navigation.</p>
+        </article>
+        <article class="card">
+          <div>
+            <h3>UI & Play Experience</h3>
+            <p>Creating interfaces and interactions that make complex systems approachable for players across desktop and mobile.</p>
           </div>
-        </a>
-
-        <a class="card" href="https://example.com/site-04" target="_blank" rel="noopener noreferrer">
-          <div class="card-body">
-            <h3 class="card-title">Event Page 04</h3>
-            <p class="card-meta">Student: Leo H.</p>
-            <p class="card-desc">Event microsite with schedule, speakers, and registration link.</p>
-          </div>
-        </a>
+        </article>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Student Project Showcase</p>
-    </div>
-  </footer>
-
-  <script>
-    // Tiny enhancement: auto-update year in the footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <footer>
+      Built as a simple single-file portfolio site for GitHub Pages.
+    </footer>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
